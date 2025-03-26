@@ -61,26 +61,20 @@ const SFX = {
   die: new Audio(),
   played: false,
 };
-
 const gnd = {
   sprite: new Image(),
   x: 0,
   y: 0,
   draw: function () {
     this.y = parseFloat(scrn.height - this.sprite.height);
-    // Aqui, ajustamos a largura do chão para cobrir toda a largura da tela (canvas)
     sctx.drawImage(this.sprite, this.x, this.y, scrn.width, this.sprite.height);
   },
   update: function () {
     if (state.curr != state.Play) return;
     this.x -= dx;
-    // Quando o chão se move para a esquerda, ele deve ser reposicionado de forma contínua
-    if (this.x <= -scrn.width) {
-      this.x = 0;
-    }
+    this.x = this.x % (this.sprite.width / 10);
   },
 };
-
 
 const bg = {
   sprite: new Image(),

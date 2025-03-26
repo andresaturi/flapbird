@@ -276,7 +276,7 @@ const UI = {
           let bs;
           let bs1;
           let bs2;
-          if((this.score.curr) >= 5){
+          if((this.score.curr) >= 10){
             bs = 'A PISTA ESTA';
             bs1 = 'EMBAIXO DO';
             bs2 = 'MICROONDAS';
@@ -352,5 +352,8 @@ function draw() {
   gnd.draw();
   UI.draw();
 }
+
+scrn.width = window.innerWidth;
+scrn.height = window.innerHeight;
 
 setInterval(gameLoop, 20);

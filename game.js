@@ -72,7 +72,7 @@ const gnd = {
   update: function () {
     if (state.curr != state.Play) return;
     this.x -= dx;
-    this.x = this.x % (this.sprite.width / 10);
+    this.x = this.x % (this.sprite.width / 1000);
   },
 };
 
